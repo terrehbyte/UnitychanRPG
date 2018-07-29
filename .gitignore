@@ -1,0 +1,14 @@
+# Visual Studio (Code)
+.vs/
+.vscode/
+
+*.sln
+*.csproj
+
+*.suo
+
+# Unity
+Builds/
+Library/
+Temp/
+
