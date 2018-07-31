@@ -163,6 +163,14 @@ namespace UnityEditor
     {
         private LineBrush lineBrush { get { return target as LineBrush; } }
 
+        public override void OnPaintInspectorGUI()
+        {
+            GUILayout.Label("Click on a tile to set the starting position for the line. Click again to set the end position.");
+            GUILayout.Label("Otherwise, this brush acts like the default brush when clicking and dragging around.");
+
+            base.OnPaintInspectorGUI();
+        }
+
         public override void OnPaintSceneGUI(GridLayout grid, GameObject brushTarget, BoundsInt position, GridBrushBase.Tool tool, bool executing)
         {
             base.OnPaintSceneGUI(grid, brushTarget, position, tool, executing);
