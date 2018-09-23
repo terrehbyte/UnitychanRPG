@@ -4,11 +4,9 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-
-
 [CreateAssetMenu]
-[CustomGridBrush(false, true, false, "Level Tile Brush")]
-[System.Obsolete("This is not ready for use yet. Please don't use it!")]
+[CustomGridBrush(false, true, true, "Level Tile Brush")]
+//[System.Obsolete("This is not ready for use yet. Please don't use it!")]
 public class LevelTileBrush : GridBrush
 {
     public enum LevelTileType
