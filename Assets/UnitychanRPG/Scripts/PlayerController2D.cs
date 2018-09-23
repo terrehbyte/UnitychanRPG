@@ -31,7 +31,7 @@ public class PlayerController2D : MonoBehaviour
     {
         float targetMoveSpeed = baseMoveSpeed * (Input.GetButton("Sprint") ? dashMultiplier : 1.0f);
 
-        rbody.velocity = lastPlayerInput * targetMoveSpeed;
+        rbody.velocity = lastPlayerInput.normalized * targetMoveSpeed;
     }
 
     void Reset()
