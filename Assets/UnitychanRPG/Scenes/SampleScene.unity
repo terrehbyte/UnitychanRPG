@@ -1837,7 +1837,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 2
-      m_ColliderType: 0
+      m_ColliderType: 2
   - first: {x: -4, y: 4, z: 0}
     second:
       m_TileIndex: 27
@@ -2337,20 +2337,8 @@ CompositeCollider2D:
         Y: 20000000
       - X: -10000000
         Y: 50000000
-      - X: -40000000
-        Y: 50000000
-      - X: -40000000
-        Y: 40000000
-      - X: -20000000
-        Y: 40000000
-      - X: -20000000
-        Y: 20000000
-      - X: -40000000
-        Y: 20000000
-      - X: -40000000
-        Y: 40000000
       - X: -50000000
-        Y: 40000000
+        Y: 50000000
       - X: -50000000
         Y: 30000000
       - X: -60000000
@@ -2433,6 +2421,14 @@ CompositeCollider2D:
         Y: -90000000
       - X: 20000000
         Y: -90000000
+    - - X: -40000000
+        Y: 20000000
+      - X: -40000000
+        Y: 40000000
+      - X: -20000000
+        Y: 40000000
+      - X: -20000000
+        Y: 20000000
     - - X: -30000000
         Y: 10000000
       - X: -20000000
@@ -2508,13 +2504,7 @@ CompositeCollider2D:
       - {x: 4, y: 2}
       - {x: -1, y: 2}
       - {x: -1, y: 5}
-      - {x: -4, y: 5}
-      - {x: -4, y: 4}
-      - {x: -2, y: 4}
-      - {x: -2, y: 2}
-      - {x: -4, y: 2}
-      - {x: -4, y: 4}
-      - {x: -5, y: 4}
+      - {x: -5, y: 5}
       - {x: -5, y: 3}
       - {x: -6, y: 3}
       - {x: -6, y: 1}
@@ -2556,6 +2546,10 @@ CompositeCollider2D:
       - {x: 0, y: -6}
       - {x: 0, y: -9}
       - {x: 2, y: -9}
+    - - {x: -4, y: 2}
+      - {x: -4, y: 4}
+      - {x: -2, y: 4}
+      - {x: -2, y: 2}
     - - {x: -3, y: 1}
       - {x: -2, y: 1}
       - {x: -2, y: 0.99999994}
@@ -2662,6 +2656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1363960131}
   - component: {fileID: 1363960129}
+  - component: {fileID: 1363960134}
   - component: {fileID: 1363960130}
   - component: {fileID: 1363960133}
   - component: {fileID: 1363960132}
@@ -2685,8 +2680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rbody: {fileID: 1363960132}
   coll2D: {fileID: 1363960133}
-  baseMoveSpeed: 7
-  dashMultiplier: 2
+  locomotion: {fileID: 1363960134}
 --- !u!212 &1363960130
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2791,3 +2785,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0.1
+--- !u!114 &1363960134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1363960128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9933c7b3fa1aa194a993cfe16c222860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rbody: {fileID: 1363960132}
+  coll2D: {fileID: 1363960133}
+  baseMoveSpeed: 7
+  dashMultiplier: 2
