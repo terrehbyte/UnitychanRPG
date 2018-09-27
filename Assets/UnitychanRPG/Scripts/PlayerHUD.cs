@@ -11,6 +11,11 @@ public class PlayerHUD : MonoBehaviour
     [SerializeField]
     private PlayerController2D controller;
 
+    // TODO: Create interface for getting interaction icon
+    // - Accessible
+    // - Inaccessible
+    // - Other states? (or vary it based on object? i.e. locked door vs unlocked door)
+
     public void SetInteractTarget(Transform target)
     {
         interactIcon.gameObject.SetActive(target != null);
