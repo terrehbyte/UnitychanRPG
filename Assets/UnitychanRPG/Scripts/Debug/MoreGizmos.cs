@@ -13,7 +13,20 @@ public class MoreGizmos : MonoBehaviour
     abstract class GizmoDraw
     {
         public Vector3 position;
-        public Color color;
+        private Color _color;
+        public Color color
+        {
+            get
+            {
+                return _color == Color.clear ? Color.magenta : _color;
+            }
+            set
+            {
+                _color = value;
+            }
+        }
+
+        public abstract void Draw();
     }
     class GizmoSphere : GizmoDraw
     {
@@ -25,6 +38,12 @@ public class MoreGizmos : MonoBehaviour
         }
 
         public float radius;
+
+        public override void Draw()
+        {
+            Gizmos.color = color;
+            Gizmos.DrawSphere(position, radius);
+        }
     }
     class GizmoCube : GizmoDraw
     {
@@ -36,6 +55,11 @@ public class MoreGizmos : MonoBehaviour
         }
 
         public Vector3 size;
+        public override void Draw()
+        {
+            Gizmos.color = color;
+            Gizmos.DrawCube(position, size);
+        }
     }
 
     private List<GizmoDraw> gizmos = new List<GizmoDraw>();
@@ -96,27 +120,11 @@ public class MoreGizmos : MonoBehaviour
     {
         Color originalColor = Gizmos.color;
 
-        foreach(var draw in gizmos)
+        for(int i = 0; i < gizmos.Count; ++i)
         {
-            Color gizColor = (draw.color == Color.clear ? Color.magenta : draw.color );
-
-            Gizmos.color = gizColor;
-
-            if(draw is GizmoSphere)
-            {
-                GizmoSphere cast = draw as GizmoSphere;
-                Gizmos.DrawSphere(cast.position, cast.radius);
-            }
-            else if (draw is GizmoCube)
-            {
-                GizmoCube cast = draw as GizmoCube;
-                Gizmos.DrawCube(cast.position, cast.size);
-            }
-            else
-            {
-                UnityEngine.Debug.LogError("Attempted to draw an unsupported type of Gizmo.");
-            }
+            gizmos[i].Draw();
         }
+
         gizmos.Clear();
 
         Gizmos.color = originalColor;
