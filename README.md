@@ -16,9 +16,9 @@ other standalone targets for desktop as well.
 
 ## Roadmap
 
-- [ ] Figure out how to deal with entities like doors and levers
-- [ ] Make a less jank character controller for 2D top-down grid based levels
-  - Should the player fit through 1x1 zones? (It does so now by having a smaller collider).
+See the ["Game Development" project on GitHub][GitHubProj] for details.
+
+[GitHubProj]:https://github.com/terrehbyte/UnitychanRPG/projects/1
 
 ## License
 
