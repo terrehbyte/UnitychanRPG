@@ -6,4 +6,7 @@ public interface IAimable
     void AimRight(float delta);
     void Aim(Vector2 delta);
     void Set(Vector2 newPosition);
+
+    Vector2 screenSpaceTarget {get;}
+    Vector3 worldSpaceTarget {get;}
 }

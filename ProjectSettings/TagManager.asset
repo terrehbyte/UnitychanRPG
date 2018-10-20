@@ -15,7 +15,7 @@ TagManager:
   - 
   - Entity
   - Player
-  - 
+  - Bullet
   - 
   - 
   - 
@@ -43,4 +43,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Bullet
+    uniqueID: 1877699005
     locked: 0

@@ -31,6 +31,9 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField]
     private PlayerHUD hud;
 
+    [SerializeField]
+    private PlayerGun gun;
+
     // Last polled player input vector
     private Vector2 lastPlayerMoveInput;
     private Vector2 lastCursorPosition;
@@ -102,6 +105,8 @@ public class PlayerController2D : MonoBehaviour
 
     private void ProcessInput()
     {
+        // aiming
+
         switch (aimSource)
         {
             case AimSource.Absolute:
@@ -118,6 +123,12 @@ public class PlayerController2D : MonoBehaviour
 
         lastPlayerMoveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         locomotion.SetMovementInput(lastPlayerMoveInput);
+
+        // firing
+        if(Input.GetButtonDown("Fire1"))
+        {
+            gun.Fire(aim.worldSpaceTarget);
+        }
 
         // interaction logic
 

@@ -239,6 +239,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 61398779652035070, guid: f1332ba27b547524e9ff63da03d5732c,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50912391289720604, guid: f1332ba27b547524e9ff63da03d5732c,
+        type: 2}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1332ba27b547524e9ff63da03d5732c, type: 2}
   m_IsPrefabAsset: 0
@@ -286,7 +296,7 @@ MonoBehaviour:
   m_PixelSnapping: 0
   m_CropFrameX: 1
   m_CropFrameY: 1
-  m_StretchFill: 0
+  m_StretchFill: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -359,6 +369,22 @@ MonoBehaviour:
   smoothFactor: 1
   maxSpeed: 10
   maxDistance: 0
+--- !u!1 &555290093 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1040602334502980, guid: f1332ba27b547524e9ff63da03d5732c,
+    type: 2}
+  m_PrefabInternal: {fileID: 297233048}
+--- !u!114 &555290097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 555290093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c63e0f1b3fc06e24ab243f6b01ee1dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &641875213
 Prefab:
   m_ObjectHideFlags: 0
@@ -3592,13 +3618,7 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1076747721}
     m_ColliderPaths:
-    - - X: 10000000
-        Y: -80000000
-      - X: 10000000
-        Y: -90000000
-      - X: 20000000
-        Y: -90000000
-      - X: 20000000
+    - - X: 20000000
         Y: -80000000
       - X: 30000000
         Y: -80000000
@@ -3702,7 +3722,7 @@ CompositeCollider2D:
         Y: -80000000
       - X: 0
         Y: -90000000
-      - X: 9999999
+      - X: 20000000
         Y: -90000000
     - - X: -40000000
         Y: 20000000
@@ -3718,12 +3738,6 @@ CompositeCollider2D:
         Y: 10000000
       - X: -20000000
         Y: 9999999
-    - - X: 9999999
-        Y: -20000000
-      - X: 10000000
-        Y: -10000000
-      - X: 10000000
-        Y: -20000000
     - - X: 70000000
         Y: -130000000
       - X: 20000000
@@ -3785,21 +3799,14 @@ CompositeCollider2D:
       - X: 70000000
         Y: -170000000
     - - X: 9999999
-        Y: -80000000
-      - X: 10000000
-        Y: -75000000
-      - X: 9999999
         Y: -70000000
       - X: 10000000
-        Y: -60000000
+        Y: -70000000
       - X: 10000000
         Y: -80000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 1, y: -8}
-      - {x: 1, y: -9}
-      - {x: 2, y: -9}
-      - {x: 2, y: -8}
+    - - {x: 2, y: -8}
       - {x: 3, y: -8}
       - {x: 3, y: -7}
       - {x: 4, y: -7}
@@ -3851,7 +3858,7 @@ CompositeCollider2D:
       - {x: -1, y: -8}
       - {x: 0, y: -8}
       - {x: 0, y: -9}
-      - {x: 0.99999994, y: -9}
+      - {x: 2, y: -9}
     - - {x: -4, y: 2}
       - {x: -4, y: 4}
       - {x: -2, y: 4}
@@ -3859,9 +3866,6 @@ CompositeCollider2D:
     - - {x: -3, y: 1}
       - {x: -2, y: 1}
       - {x: -2, y: 0.99999994}
-    - - {x: 0.99999994, y: -2}
-      - {x: 1, y: -1}
-      - {x: 1, y: -2}
     - - {x: 7, y: -13}
       - {x: 2, y: -13}
       - {x: 2, y: -12}
@@ -3892,10 +3896,8 @@ CompositeCollider2D:
       - {x: -8, y: -16}
       - {x: -8, y: -17}
       - {x: 7, y: -17}
-    - - {x: 0.99999994, y: -8}
-      - {x: 1, y: -7.5}
-      - {x: 0.99999994, y: -7}
-      - {x: 1, y: -6}
+    - - {x: 0.99999994, y: -7}
+      - {x: 1, y: -7}
       - {x: 1, y: -8}
   m_VertexDistance: 0.0005
 --- !u!50 &1076747723
@@ -3984,6 +3986,7 @@ GameObject:
   - component: {fileID: 1363960129}
   - component: {fileID: 1363960134}
   - component: {fileID: 1363960135}
+  - component: {fileID: 1363960136}
   - component: {fileID: 1363960130}
   - component: {fileID: 1363960133}
   - component: {fileID: 1363960132}
@@ -4011,6 +4014,7 @@ MonoBehaviour:
   locomotion: {fileID: 1363960134}
   aim: {fileID: 1363960135}
   hud: {fileID: 1746582164}
+  gun: {fileID: 1363960136}
   deltaSensitivity: 20
   requireFocus: 1
   aimSource: 1
@@ -4073,7 +4077,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.1, y: -1.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1591696484}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4154,6 +4159,20 @@ MonoBehaviour:
   keepWorldSpacePosition: 0
   driveImage: {fileID: 710461154}
   dummy: {fileID: 886899639}
+--- !u!114 &1363960136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1363960128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db211044df4edca40a5ee8f4b1b875de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 1591696484}
+  bulletPrefab: {fileID: 1199501772153840, guid: 279cbc7933bbe5947b4e303fe03b25ab,
+    type: 2}
 --- !u!1 &1380255890
 GameObject:
   m_ObjectHideFlags: 0
@@ -4323,6 +4342,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1076747718}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1591696483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1591696484}
+  m_Layer: 9
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1591696484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1591696483}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.43, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1363960131}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1668238244
 Prefab:

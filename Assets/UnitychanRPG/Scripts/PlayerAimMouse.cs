@@ -26,6 +26,10 @@ public class PlayerAimMouse : MonoBehaviour, IAimable
     [SerializeField]
     private GameObject dummy;
 
+    public Vector2 screenSpaceTarget => screenSpacePosition;
+
+    public Vector3 worldSpaceTarget => worldSpaceAnchor;
+
     public void AimUp(float delta)
     {
         accumulatedChanges.y += delta;
